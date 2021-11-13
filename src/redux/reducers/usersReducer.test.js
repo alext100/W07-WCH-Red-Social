@@ -19,4 +19,21 @@ describe("Given usersReducer reducer", () => {
       expect(newUser).toHaveProperty("isAuthenticated", true);
     });
   });
+
+  describe("When it receives a user and userLogout action", () => {
+    test("Then it should return a new user with isAuthenticated: false", () => {
+      const initialUser = {
+        isAuthenticated: true,
+      };
+      const user = getUser();
+
+      const action = {
+        type: actionTypes.userLogout,
+        user: user,
+      };
+      const newUser = usersReducer(initialUser, action);
+
+      expect(newUser).toHaveProperty("isAuthenticated", false);
+    });
+  });
 });
