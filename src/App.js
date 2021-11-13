@@ -1,11 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import LoginForm from "./components/loginForm/LoginFofm";
+import RegisterForm from "./components/registerForm/RegisterForm";
 
 function App() {
   return (
     <BrowserRouter>
-      <LoginForm />
+      <RegisterForm />
     </BrowserRouter>
   );
 }
