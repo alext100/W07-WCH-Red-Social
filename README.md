@@ -21,3 +21,33 @@ New relationship: Luis & Marta (friends)
 New relationship: Luis & Marta (enemies)
 
 Removed relationship: Luis & Marta
+
+- components
+
+  - header
+    - if user logged in, shows buttons 'log out', 'my perfil'
+  - footer
+  - login form
+  - editUserDataForm will be used as a register form and edit profile form
+
+- pages
+
+  - login/register page
+  - All users page with filters(friend/enemy/all)
+  - Details of the user perfil
+
+- redux
+
+  - actions
+    - actionCreator
+    - actionTypes
+  - reducers
+    - index.js (rootReducer)
+    - usersReducer
+  - store
+    - index.js (configureStore)
+  - thunks
+    - usersThunks.js
+
+- hooks
+  -useUsers.js
