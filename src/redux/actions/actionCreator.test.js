@@ -1,5 +1,9 @@
 import { getUser } from "../../factories/usersFactory";
-import { userLoginAction, userLogoutAction } from "./actionCreator";
+import {
+  createUserAction,
+  userLoginAction,
+  userLogoutAction,
+} from "./actionCreator";
 import actionTypes from "./actionTypes";
 
 describe("Given a userLoginAction action creator", () => {
@@ -26,6 +30,22 @@ describe("Given a userLogoutAction action creator", () => {
       };
 
       const actionResult = userLogoutAction();
+
+      expect(actionResult).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a createUserAction action creator", () => {
+  describe("When it receives a user", () => {
+    test("Then it should return a createUser action and user received", () => {
+      const user = getUser();
+      const expectedAction = {
+        type: actionTypes.createUser,
+        user,
+      };
+
+      const actionResult = createUserAction(user);
 
       expect(actionResult).toEqual(expectedAction);
     });
