@@ -1,0 +1,16 @@
+.header-navlink {
+  color: rgba(255, 255, 255, 0.55);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out;
+}
+.header-navlink:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.active {
+  color: rgb(255, 255, 255);
+}
