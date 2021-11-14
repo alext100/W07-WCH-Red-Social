@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { FloatingLabel, Form, Button, ButtonGroup } from "react-bootstrap";
+import useUsers from "../../hooks/useUsers";
 
 const LoginForm = () => {
+  const { userLogin } = useUsers();
   const initialData = {
     username: "",
     password: "",
@@ -22,7 +24,7 @@ const LoginForm = () => {
 
   const onLogin = (event) => {
     event.preventDefault();
-
+    userLogin(userData);
     resetForm();
   };
 

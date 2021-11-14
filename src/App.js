@@ -1,13 +1,8 @@
-import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import RegisterForm from "./components/registerForm/RegisterForm";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <RegisterForm />
-    </BrowserRouter>
-  );
+  return <LoginPage />;
 }
 
 export default App;
