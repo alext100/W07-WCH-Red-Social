@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import renderWithProviders from "../../utils/test-utils";
-import LoginForm from "./LoginFofm";
+import LoginForm from "./LoginForm";
 
 describe("Given a LoginForm Component", () => {
   describe("When it rendered", () => {
