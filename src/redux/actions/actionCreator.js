@@ -8,3 +8,8 @@ export const userLoginAction = (user) => ({
 export const userLogoutAction = () => ({
   type: actionTypes.userLogout,
 });
+
+export const createUserAction = (user) => ({
+  type: actionTypes.createUser,
+  user,
+});

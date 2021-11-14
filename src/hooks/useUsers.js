@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { loginUserThunk } from "../redux/thunks/userThunks";
+import { createUserThunk, loginUserThunk } from "../redux/thunks/userThunks";
 
 const useUsers = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,11 @@ const useUsers = () => {
     dispatch(loginUserThunk(user));
   };
 
-  return { user, userLogin };
+  const createUser = (user) => {
+    dispatch(createUserThunk(user));
+  };
+
+  return { user, userLogin, createUser };
 };
 
 export default useUsers;

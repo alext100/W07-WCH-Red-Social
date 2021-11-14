@@ -17,3 +17,15 @@ export const loginUserThunk = (user) => async (dispatch) => {
     error.code = 400;
   }
 };
+
+export const createUserThunk = (user) => async (dispatch) => {
+  const { data: newUser } = await axios.post(urlApi + "/users/register", user, {
+    headers: {
+      Authorization:
+        "Bearer " +
+        JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY))
+          .token,
+    },
+  });
+  dispatch(createUserThunk(newUser));
+};
