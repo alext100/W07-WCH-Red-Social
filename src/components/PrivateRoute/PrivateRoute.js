@@ -9,7 +9,6 @@ const PrivateRoute = ({ children }) => {
     isUserLoggedIn();
   }, [isUserLoggedIn]);
 
-  console.log("user.isAuthenticated: ", user.isAuthenticated);
   return user.isAuthenticated ? children : <LoginForm />;
 };
 
