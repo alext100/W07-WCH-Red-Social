@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isUserLoggedIn, user } = useUsers();
+  const { isUserLoggedIn, user, userLogout } = useUsers();
 
   useEffect(() => {
     isUserLoggedIn();
@@ -15,6 +15,7 @@ const Header = () => {
 
   const actionOnClick = (event) => {
     event.preventDefault();
+    userLogout();
     navigate("/login");
   };
 
