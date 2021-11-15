@@ -8,6 +8,10 @@ const userActionsReducer = (usersList = [], action) => {
       newUsersList = [...usersList, action.user];
       break;
 
+    case actionTypes.loadUsers:
+      newUsersList = [...action.users];
+      break;
+
     default:
       newUsersList = usersList;
   }

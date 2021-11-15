@@ -13,7 +13,7 @@ const usersReducer = (
     case actionTypes.userLogin:
       newUser = {
         isAuthenticated: true,
-        user: {},
+        user: action.user,
       };
       break;
 
@@ -25,7 +25,7 @@ const usersReducer = (
       break;
 
     default:
-      newUser = user;
+      newUser = { ...user };
   }
   return newUser;
 };
