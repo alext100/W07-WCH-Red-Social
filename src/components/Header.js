@@ -1,10 +1,22 @@
 import "./Header.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import useUsers from "../hooks/useUsers";
+import { useNavigate } from "react-router";
 
 const Header = () => {
-  const { isAuthenticated } = useSelector(({ user }) => user);
+  const navigate = useNavigate();
+  const { isUserLoggedIn, user } = useUsers();
+
+  useEffect(() => {
+    isUserLoggedIn();
+  }, [isUserLoggedIn]);
+
+  const actionOnClick = (event) => {
+    event.preventDefault();
+    navigate("/login");
+  };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -13,10 +25,19 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {isAuthenticated ? (
-              <NavLink className="header-navlink" to="/main">
-                Main
-              </NavLink>
+            {user.isAuthenticated ? (
+              <>
+                <NavLink className="header-navlink" to="/main">
+                  Main
+                </NavLink>
+                <NavLink
+                  className="header-navlink"
+                  onClick={actionOnClick}
+                  to="/login"
+                >
+                  Logout
+                </NavLink>
+              </>
             ) : (
               <>
                 <NavLink className="header-navlink" to="/login">

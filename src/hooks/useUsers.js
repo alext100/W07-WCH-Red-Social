@@ -26,7 +26,7 @@ const useUsers = () => {
 
   const isUserLoggedIn = useCallback(() => {
     const token = JSON.parse(
-      localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE)
+      localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
     );
     if (token) {
       const userData = jwtDecode(token.token);
