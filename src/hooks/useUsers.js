@@ -11,7 +11,10 @@ import {
 
 const useUsers = () => {
   const dispatch = useDispatch();
-  const user = useSelector(({ user }) => user);
+  const { user, usersList } = useSelector(({ user, usersList }) => ({
+    user,
+    usersList,
+  }));
 
   const userLogin = (user) => {
     dispatch(loginUserThunk(user));
@@ -35,7 +38,7 @@ const useUsers = () => {
     dispatch(loadUsersThunk());
   }, [dispatch]);
 
-  return { user, userLogin, createUser, isUserLoggedIn, loadUsers };
+  return { user, usersList, userLogin, createUser, isUserLoggedIn, loadUsers };
 };
 
 export default useUsers;

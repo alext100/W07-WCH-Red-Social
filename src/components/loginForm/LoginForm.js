@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FloatingLabel, Form, Button, ButtonGroup } from "react-bootstrap";
+import { useNavigate } from "react-router";
 import useUsers from "../../hooks/useUsers";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const { userLogin } = useUsers();
   const initialData = {
     username: "",
@@ -26,6 +28,7 @@ const LoginForm = () => {
     event.preventDefault();
     userLogin(userData);
     resetForm();
+    navigate("/main");
   };
 
   return (
