@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import LoginForm from "./components/loginForm/LoginForm";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RegisterForm from "./components/registerForm/RegisterForm";

@@ -2,7 +2,7 @@ import "./Header.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import useUsers from "../hooks/useUsers";
+import useUsers from "../../hooks/useUsers";
 import { useNavigate } from "react-router";
 
 const Header = () => {
