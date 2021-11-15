@@ -2,7 +2,10 @@ import jwtDecode from "jwt-decode";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { userLoginAction } from "../redux/actions/actionCreator";
+import {
+  userLoginAction,
+  userLogoutAction,
+} from "../redux/actions/actionCreator";
 import {
   createUserThunk,
   loadUsersThunk,
@@ -18,6 +21,11 @@ const useUsers = () => {
 
   const userLogin = (user) => {
     dispatch(loginUserThunk(user));
+  };
+
+  const userLogout = () => {
+    localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE_KEY);
+    dispatch(userLogoutAction());
   };
 
   const createUser = (user) => {
@@ -38,7 +46,15 @@ const useUsers = () => {
     dispatch(loadUsersThunk());
   }, [dispatch]);
 
-  return { user, usersList, userLogin, createUser, isUserLoggedIn, loadUsers };
+  return {
+    user,
+    usersList,
+    userLogin,
+    createUser,
+    isUserLoggedIn,
+    loadUsers,
+    userLogout,
+  };
 };
 
 export default useUsers;
