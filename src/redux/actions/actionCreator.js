@@ -13,3 +13,8 @@ export const createUserAction = (user) => ({
   type: actionTypes.createUser,
   user,
 });
+
+export const loadUsersAction = (users) => ({
+  type: actionTypes.loadUsers,
+  users,
+});
