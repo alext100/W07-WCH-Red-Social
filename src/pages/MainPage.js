@@ -11,7 +11,7 @@ const MainPage = () => {
   }, [loadUsers]);
 
   return (
-    <CardGroup>
+    <CardGroup className="container">
       <Row xs={1} md={2} className="g-3">
         {usersList.map((user) => (
           <UserCard
