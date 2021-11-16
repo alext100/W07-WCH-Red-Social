@@ -120,7 +120,7 @@ const RegisterForm = () => {
           <Button
             variant="primary"
             size="sm"
-            type="button"
+            type="submit"
             onClick={onRegister}
             value="Login"
           >

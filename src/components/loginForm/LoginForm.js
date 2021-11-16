@@ -73,7 +73,7 @@ const LoginForm = () => {
           <Button
             variant="primary"
             size="sm"
-            type="button"
+            type="submit"
             onClick={onLogin}
             value="Login"
           >
@@ -82,7 +82,7 @@ const LoginForm = () => {
           <Button
             variant="primary"
             size="sm"
-            type="button"
+            type="submit"
             /* onClick={onRegister} */
             value="Login"
           >
